@@ -45,3 +45,7 @@ Start-Process -FilePath "SteamSetup.exe" -WorkingDirectory "C:\Users\olive\Downl
 # INSTALL BATTLE.NET
 Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "C:\Users\olive\Downloads\Battle.net-Setup.exe"
 Start-Process -FilePath "Battle.net-Setup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
+
+# INSTALL DISCORD
+Invoke-WebRequest -Uri "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86" -OutFile "C:\Users\olive\Downloads\discord.exe"
+Start-Process -FilePath "discord.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
