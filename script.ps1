@@ -33,7 +33,7 @@ Set-ItemProperty $regKeyHttp  -name ProgId FirefoxURL
 Set-ItemProperty $regKeyHttps -name ProgId FirefoxURL
 
 # INSTALL VSCODE
-Invoke-WebRequest -Uri "https://code.visualstudio.com/docs/?dv=win32user" -OutFile "C:\Users\olive\Downloads\vscode.exe"
+Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-user" -OutFile "C:\Users\olive\Downloads\vscode.exe"
 Start-Process -FilePath "vscode.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL STEAM
