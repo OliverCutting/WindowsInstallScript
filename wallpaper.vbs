@@ -1,4 +1,5 @@
-dim shell dim user
+dim shell 
+dim user
 
 Set shell = WScript.CreateObject("WScript.Shell") user = shell.ExpandEnvironmentStrings("%USERNAME%")
 
