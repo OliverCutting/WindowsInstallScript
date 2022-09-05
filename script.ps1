@@ -51,5 +51,5 @@ Invoke-WebRequest -Uri "https://discord.com/api/downloads/distributions/app/inst
 Start-Process -FilePath "discord.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL SPOTIFY
-Invoke-WebRequest -Uri "https://www.spotify.com/download/windows/" -OutFile "C:\Users\olive\Downloads\spotify.exe"
+Invoke-WebRequest -Uri "https://download.scdn.co/SpotifySetup.exe" -OutFile "C:\Users\olive\Downloads\spotify.exe"
 Start-Process -FilePath "spotify.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
