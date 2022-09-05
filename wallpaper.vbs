@@ -4,7 +4,7 @@ Set shell = WScript.CreateObject("WScript.Shell") user = shell.ExpandEnvironment
 
 Set fso = CreateObject("Scripting.FileSystemObject")
 
-windowsDir = fso.GetSpecialFolder(0) wallpaper = "C:\Users\olive\Pictures\mountains2.jpg"
+windowsDir = fso.GetSpecialFolder(0) wallpaper = "C:\Users\olive\Pictures\mountains2"
 
 shell.RegWrite "HKCU\Control Panel\Desktop\Wallpaper", wallpaper
 
