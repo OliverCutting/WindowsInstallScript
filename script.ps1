@@ -20,7 +20,7 @@ add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
 
 # INSTALL STEAM
-Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "C:\Users\olive\Downloads\"
+Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "C:\Users\olive\Downloads\SteamSetup.exe"
 Start-Process -FilePath "SteamSetup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL BATTLE.NET
