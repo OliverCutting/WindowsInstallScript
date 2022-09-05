@@ -32,6 +32,10 @@ Set-ItemProperty $regKeyFtp   -name ProgId FirefoxURL
 Set-ItemProperty $regKeyHttp  -name ProgId FirefoxURL
 Set-ItemProperty $regKeyHttps -name ProgId FirefoxURL
 
+# INSTALL VSCODE
+Invoke-WebRequest -Uri "https://code.visualstudio.com/docs/?dv=win32user" -OutFile "C:\Users\olive\Downloads\vscode.exe"
+Start-Process -FilePath "vscode.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
+
 # INSTALL STEAM
 # Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "C:\Users\olive\Downloads\SteamSetup.exe"
 # Start-Process -FilePath "SteamSetup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
