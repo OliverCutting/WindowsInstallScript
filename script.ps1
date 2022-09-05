@@ -20,17 +20,8 @@ add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
 
 # INSTALL FIREFOX
-Invoke-WebRequest -Uri "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-GB" -OutFile "C:\Users\olive\Downloads\firefoxsetup.exe"
-Start-Process -FilePath "firefoxsetup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
-
-# SET FIREFOX AS DEFAULT BROWSER
-$regKey      = "HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\{0}\UserChoice"
-$regKeyFtp   = $regKey -f 'ftp'
-$regKeyHttp  = $regKey -f 'http'
-$regKeyHttps = $regKey -f 'https'
-Set-ItemProperty $regKeyFtp   -name ProgId FirefoxURL
-Set-ItemProperty $regKeyHttp  -name ProgId FirefoxURL
-Set-ItemProperty $regKeyHttps -name ProgId FirefoxURL
+# Invoke-WebRequest -Uri "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-GB" -OutFile "C:\Users\olive\Downloads\firefoxsetup.exe"
+# Start-Process -FilePath "firefoxsetup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL VSCODE
 Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-user" -OutFile "C:\Users\olive\Downloads\vscode.exe"
