@@ -1,7 +1,7 @@
 dim shell 
 dim user
 
-Set shell = WScript.CreateObject("WScript.Shell") user = shell.ExpandEnvironmentStrings("%USERNAME%")
+Set shell = WScript.CreateObject("WScript.Shell") : user = shell.ExpandEnvironmentStrings("%USERNAME%")
 
 Set fso = CreateObject("Scripting.FileSystemObject")
 
