@@ -49,3 +49,7 @@ Start-Process -FilePath "Battle.net-Setup.exe" -WorkingDirectory "C:\Users\olive
 # INSTALL DISCORD
 Invoke-WebRequest -Uri "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86" -OutFile "C:\Users\olive\Downloads\discord.exe"
 Start-Process -FilePath "discord.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
+
+# INSTALL SPOTIFY
+Invoke-WebRequest -Uri "https://www.spotify.com/download/windows/" -OutFile "C:\Users\olive\Downloads\spotify.exe"
+Start-Process -FilePath "spotify.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
