@@ -1,23 +1,23 @@
-# DOWNLOAD & SET WALLPAPER
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/ee2h4mwcftcukeu/mountains2.jpg?dl=0" -OutFile "C:\Users\olive\Pictures\mountains2.jpg"
-$MyWallpaper="C:\Users\olive\Pictures\mountains2.jpg"
-$code = @' 
-using System.Runtime.InteropServices; 
-namespace Win32{ 
-    
-     public class Wallpaper{ 
-        [DllImport("user32.dll", CharSet=CharSet.Auto)] 
-         static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ; 
-         
-         public static void SetWallpaper(string thePath){ 
-            SystemParametersInfo(20,0,thePath,3); 
-         }
-    }
- } 
-'@
+# SET WALLPAPER
+$setwallpapersrc = @"
+using System.Runtime.InteropServices;
 
-add-type $code 
-[Win32.Wallpaper]::SetWallpaper($MyWallpaper)
+public class Wallpaper
+{
+  public const int SetDesktopWallpaper = 20;
+  public const int UpdateIniFile = 0x01;
+  public const int SendWinIniChange = 0x02;
+  [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+  private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+  public static void SetWallpaper(string path)
+  {
+    SystemParametersInfo(SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniChange);
+  }
+}
+"@
+Add-Type -TypeDefinition $setwallpapersrc
+
+[Wallpaper]::SetWallpaper("C:\Users\olive\OneDrive\Pictures\mountains2.jpg")
 
 # ACTIVATE DARK MODE
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
