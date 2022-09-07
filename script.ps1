@@ -43,7 +43,7 @@ Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/
 Start-Process -FilePath "SteamSetup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL BATTLE.NET
-Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "C:\Users\olive\Downloads\Battle.net-Setup.exe"
+Invoke-WebRequest -Uri "https://www.battle.net/download/getInstallerForGame?os=win&gameProgram=BATTLENET_APP&version=Live&id=undefined" -OutFile "C:\Users\olive\Downloads\Battle.net-Setup.exe"
 Start-Process -FilePath "Battle.net-Setup.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
 
 # INSTALL DISCORD
