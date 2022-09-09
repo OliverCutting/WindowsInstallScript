@@ -64,3 +64,7 @@ Start-Process -FilePath "spotify.exe" -WorkingDirectory "C:\Users\olive\Download
 # INSTALL PYCHARM
 Invoke-WebRequest -Uri "https://download.jetbrains.com/python/pycharm-professional-2022.2.1.exe" -OutFile "C:\Users\olive\Downloads\pycharm.exe"
 Start-Process -FilePath "pycharm.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
+
+# INSTALL PYTHON
+Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe" -OutFile "C:\Users\olive\Downloads\python.exe"
+Start-Process -FilePath "python.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
