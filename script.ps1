@@ -16,8 +16,15 @@ public class Wallpaper
 }
 "@
 Add-Type -TypeDefinition $setwallpapersrc
-
 [Wallpaper]::SetWallpaper("C:\Users\olive\OneDrive\Pictures\mountains2.jpg")
+
+# SET LOCKSCREEN IMAGE
+$regKey = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization'
+if (!(Test-Path -Path $regKey)) {
+   $null = New-Item -Path $regKey
+}
+Set-ItemProperty -Path $regKey -Name LockScreenImage -value "C:\Users\olive\OneDrive\Pictures\mountains2.jpg"
+
 
 # ACTIVATE DARK MODE
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
@@ -53,3 +60,7 @@ Start-Process -FilePath "discord.exe" -WorkingDirectory "C:\Users\olive\Download
 # INSTALL SPOTIFY
 Invoke-WebRequest -Uri "https://download.scdn.co/SpotifySetup.exe" -OutFile "C:\Users\olive\Downloads\spotify.exe"
 Start-Process -FilePath "spotify.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
+
+# INSTALL PYCHARM
+Invoke-WebRequest -Uri "https://download.jetbrains.com/python/pycharm-professional-2022.2.1.exe" -OutFile "C:\Users\olive\Downloads\pycharm.exe"
+Start-Process -FilePath "pycharm.exe" -WorkingDirectory "C:\Users\olive\Downloads\"
